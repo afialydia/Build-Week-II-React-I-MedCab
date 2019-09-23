@@ -4,7 +4,7 @@ import Entrance from "./Components/Entrance";
 
 
 
-function App() {
+function App() { 
   return (
     <div className="App">
      <Entrance />
