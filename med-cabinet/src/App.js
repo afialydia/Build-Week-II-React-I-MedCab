@@ -5,14 +5,12 @@ import SearchForm from "./Components/SearchForm";
 import { Route } from 'react-router-dom';
 
 
-
 function App() { 
   return (
     <div className="App">
-     <Entrance />
+    <Route exact path='/' component={Entrance}/>
+    <Route exact path='/search' component={SearchForm}/>
     </div>
-
-    <Route path='/search' component={SearchForm}/>
   );
 }
 
