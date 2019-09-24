@@ -1,10 +1,11 @@
 //NEEDS PROPS 
 
 import React from 'react'
-import { One, Two, Three, Button, Info } from "./Styles";
+import { One, Two, Three, Button, Info, ProfileTitle } from "./Styles";
 
 const RecCards = () => (
     <div>
+        <ProfileTitle>Our Top Recommendations</ProfileTitle>
         <One className= "recommendation-one">
             {/* <h3>Recommendation 1 is:</h3>  */}
             <Info>Strain: Gg-4 </Info>
