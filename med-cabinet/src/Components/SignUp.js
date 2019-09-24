@@ -25,7 +25,7 @@ flex-direction: column;
 justify-content: space-evenly;
 height: 60vh;
 border: 3px solid rgb(64,64,64);
-background: linear-gradient(110deg, rgb(13,112,121) 60%, rgb(243,243,243) 60%);border-radius:12px;
+background: linear-gradient(110deg,rgb(41,101,62)60%, rgb(243,243,243) 60%);border-radius:12px;
 width: 25vw;
 align-items: center;
 color: rgb(64,64,64)
@@ -89,9 +89,9 @@ const SignUp = ({
 
           <Field component="select" name="DesiredRole">
               <option value="Pick One"> Pick One</option>
-              <option value="UX Design"> UX Design</option>
-              <option value="Front End Development">Front End Development</option>
-              <option value="Back End Development">Back End Development</option>
+              <option value="Medical Use"> Medical Use</option>
+              <option value="Recreational Use">Recreational Use</option>
+              <option value="A Bit of Both">A Bit of Both</option>
           </Field>
 
             <label>Terms Of Service

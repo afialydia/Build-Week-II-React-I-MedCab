@@ -66,10 +66,7 @@ const SignIn = ({
     <Wrapper>
         
         <Form><LogIn>
-          <span>
-          <Field type="text" name="name" placeholder="Name"/>
-          { touched.name && errors.name && <p>{errors.name}</p> }
-          </span>
+          
          
           <span>
           <Field type="email" name="email" placeholder="Email"/>
@@ -80,24 +77,7 @@ const SignIn = ({
           <Field type="password" name="password" placeholder="Password"/>
            { touched.password && errors.password && <p>{errors.password}</p> }
            </span>
-
-           <span>
-          <Field type="password" name="password" placeholder="Confirm Password"/>
-           { touched.password && errors.password && <p>{errors.password}</p> }
-           </span>
-
-          
-
-          <Field component="select" name="DesiredRole">
-              <option value="Pick One"> Pick One</option>
-              <option value="UX Design"> UX Design</option>
-              <option value="Front End Development">Front End Development</option>
-              <option value="Back End Development">Back End Development</option>
-          </Field>
-
-            <label>Terms Of Service
-            <Field type="checkbox" name="ToS" checked={values.ToS}/>
-            </label>
+  
 
           <Thing type="submit">Submit</Thing>
         </LogIn>
