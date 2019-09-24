@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
-import { Form } from 'semantic-ui-react';
+import { Form, Button } from 'semantic-ui-react';
 
-const testData = "test string";     
+// component styling
+
+const ButtonContainer = styled.div`
+    display: flex;
+    justify-content: center;
+`
 
 const SearchContainerDiv = styled.div`
     height: 80vh;
@@ -14,18 +19,39 @@ const SearchContainerDiv = styled.div`
     * {
         padding: 0.5em;
     }
+
+    Button {
+        width: 100%;
+    }
 `
 
 export default function SearchForm() {
+
+    const [strainQuery, setQuery] = useState("");
+
+    const handleChange = event => {
+        setQuery(event.target.value);
+    }
+
+    const handleSubmit = () => {
+        axios
+            .post("https://reqres.in/api/users", strainQuery)
+            .then(res => console.log(res))
+            .catch(err => console.log(err))
+    }
+
     return (
         <SearchContainerDiv>
-         <Form>
+         <Form onSubmit={() => handleSubmit()}>
             <Form.Field>
                 <label>
                     Search Strains 
                 </label>
-                <input /> 
+                <input type="text" onChange={event => handleChange(event)}/> 
             </Form.Field>
+        <ButtonContainer>
+            <Button >Search</Button>
+        </ButtonContainer>
         </Form>
         </SearchContainerDiv>
     )
