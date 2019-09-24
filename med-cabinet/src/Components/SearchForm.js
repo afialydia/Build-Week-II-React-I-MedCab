@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
 import { Form, Button } from 'semantic-ui-react';
+import strainData from "../dummydata/data"
 
 // component styling
 
@@ -35,11 +36,17 @@ export default function SearchForm() {
         setQuery({...strainQuery, search: event.target.value});
     }
 
-    const handleSubmit = () => {
+    // function to send an axios.post on submit, for when we have a working endpoint to send to
+/*     const handleSubmit = () => {
         axios
             .post("https://reqres.in/api/users", strainQuery)
             .then(res => console.log(res))
             .catch(err => console.log(err))
+    } */
+
+    const handleSubmit = () => {
+        const result = strainData.filter(strain => strain.Description.includes(strainQuery.search));
+        console.log(result[0].Description)
     }
 
     return (
