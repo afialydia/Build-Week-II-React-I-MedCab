@@ -1,21 +1,21 @@
 import React from 'react';
 import { Card, Image, Icon } from 'semantic-ui-react';
 
-export default function StrainCard(props) {
+export default function StrainCard({ data }) {
+    console.log(data);
     return (
         <Card>
-            <Image src="#" alt="strain"/>
             <Card.Content>
                 <Card.Header>
-                    Strain Name
+                    {data.Strain}
                 </Card.Header>
                 <Card.Description>
-                    Strain Description
+                    {data.Description}
                 </Card.Description>
             </Card.Content>
             <Card.Content extra>
                 <Icon name="star" />
-                Rating: 5/5
+                Rating: {data.Rating}/5
             </Card.Content>
         </Card>
     )

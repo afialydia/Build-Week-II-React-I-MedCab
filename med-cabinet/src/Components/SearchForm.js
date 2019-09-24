@@ -45,6 +45,12 @@ const SearchContainerDiv = styled.div`
 
 const StrainCardContainer = styled.div`
     display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    StrainCard {
+        margin: 1em;
+    }
 `
 
 export default function SearchForm() {
@@ -52,6 +58,10 @@ export default function SearchForm() {
     const [strainQuery, setQuery] = useState({
         search: "",
     });
+
+    const [searchResults, setResults] = useState([]);
+
+    const [testData, setData] = useState([]);
 
     const handleChange = event => {
         setQuery({...strainQuery, search: event.target.value});
@@ -66,8 +76,8 @@ export default function SearchForm() {
     } */
 
     const handleSubmit = () => {
-        const resultStrains = strainData.filter(strain => strain.Description.includes(strainQuery.search) && strain.Rating > 4.9);
-        console.log(resultStrains)
+         setResults(strainData.filter(strain => strain.Description.includes(strainQuery.search) && strain.Rating > 4.9));
+         console.log(searchResults)
     }
 
     return (
@@ -94,7 +104,7 @@ export default function SearchForm() {
         </Form>
         </SearchContainerDiv>
         <StrainCardContainer>
-            <StrainCard></StrainCard>
+            {searchResults.map(item => <StrainCard data={item}></StrainCard>)}
         </StrainCardContainer>
         </>
     )
