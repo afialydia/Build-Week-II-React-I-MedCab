@@ -1,19 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Title } from "./Styles";
-import styled from "styled-components";
+import { Image } from "semantic-ui-react";
+import { ImageTweak, ProfileTitle } from "./Styles";
 
 export default function Header() {
   return (
-    <header className="ui centered">
-        <Title className="ui center">Header.JS HEADER</Title>
-        <StyledLink to="/">Take Me Back to Form?</StyledLink>
-    </header>
+    <ImageTweak>
+        <Image src='/Logo.png' alt="Med Cab Logo" />
+    </ImageTweak>
+    
   );
 }
-
-const StyledLink = styled(Link) `
-  text-decoration: none;
-  color: black;
-  margin: 20px;
-`;
