@@ -27,10 +27,12 @@ const SearchContainerDiv = styled.div`
 
 export default function SearchForm() {
 
-    const [strainQuery, setQuery] = useState("");
+    const [strainQuery, setQuery] = useState({
+        search: "",
+    });
 
     const handleChange = event => {
-        setQuery(event.target.value);
+        setQuery({...strainQuery, search: event.target.value});
     }
 
     const handleSubmit = () => {
