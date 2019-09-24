@@ -2,17 +2,34 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
 import { Form, Button } from 'semantic-ui-react';
+import StrainCard from "./StrainCard";
 import strainData from "../dummydata/data"
 
 // component styling
 
+const HeadingContainerDiv = styled.div`
+    display: flex;
+    justify-content: center;
+    text-align: center;
+`;
+
+const SubHeadingContainerDiv = styled.div`
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+    p {
+        color: black;
+    }
+
+`;
+
 const ButtonContainer = styled.div`
     display: flex;
     justify-content: center;
-`
+`;
 
 const SearchContainerDiv = styled.div`
-    height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,6 +41,10 @@ const SearchContainerDiv = styled.div`
     Button {
         width: 100%;
     }
+`;
+
+const StrainCardContainer = styled.div`
+    display: flex;
 `
 
 export default function SearchForm() {
@@ -45,11 +66,20 @@ export default function SearchForm() {
     } */
 
     const handleSubmit = () => {
-        const result = strainData.filter(strain => strain.Description.includes(strainQuery.search));
-        console.log(result[0].Description)
+        const resultStrains = strainData.filter(strain => strain.Description.includes(strainQuery.search) && strain.Rating > 4.9);
+        console.log(resultStrains)
     }
 
     return (
+        <>
+        <HeadingContainerDiv>
+            <h1>Strain Search</h1>
+            </HeadingContainerDiv>
+        <SubHeadingContainerDiv>
+            <p>
+                Search below to receive personalized recommendations for strains of medicinal marijuana.
+            </p>
+        </SubHeadingContainerDiv>
         <SearchContainerDiv>
          <Form onSubmit={() => handleSubmit()}>
             <Form.Field>
@@ -63,5 +93,9 @@ export default function SearchForm() {
         </ButtonContainer>
         </Form>
         </SearchContainerDiv>
+        <StrainCardContainer>
+            <StrainCard></StrainCard>
+        </StrainCardContainer>
+        </>
     )
 }
