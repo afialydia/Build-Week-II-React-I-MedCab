@@ -25,7 +25,7 @@ flex-direction: column;
 justify-content: space-evenly;
 height: 60vh;
 /* border: 3px solid rgb(64,64,64); */
-background: linear-gradient(110deg, rgb(13,112,121) 60%, rgb(243,243,243) 60%);
+background: rgb(206,212,182,.6);
 border-radius:12px;
 width: 25vw;
 align-items: center;
@@ -69,12 +69,12 @@ const SignIn = ({
           
          
           <span>
-          <Field type="email" name="email" placeholder="Email"/>
+          <Field className="fields" type="email" name="email" placeholder="Email"/>
           { touched.email && errors.email && <p>{errors.email}</p> }
           </span>
 
           <span>
-          <Field type="password" name="password" placeholder="Password"/>
+          <Field className="fields" type="password" name="password" placeholder="Password"/>
            { touched.password && errors.password && <p>{errors.password}</p> }
            </span>
   

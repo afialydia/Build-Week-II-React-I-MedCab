@@ -2,28 +2,35 @@ import React from 'react';
 import FormikSignIn from "./SignIn";
 import FormikSignUp from "./SignUp";
 import styled from "styled-components";
+import '../Entrance.css'
+
 
 const EntraDiv = styled.div`
 display: flex;
-/* background-image: url("../img/background.jpg") */
+/* border: 4px solid white; */
+width: 80%;
 `;
 
 const EntranDiv = styled.div`
 display: flex;
 flex-direction: column;
-margin: 0 auto;
+margin: auto;
 align-items:center;
-justify-content: space-between;
-/* background-image: url("../img/background.jpg") */
+justify-content: space-around;
+max-width: 1000px;
+height: 96vh;
+border-radius: 12px;
+/* border: 2px solid; */
+
 `;
 
 
 function Entrance() {
   return (
 
-    <EntranDiv>     
+    <EntranDiv className="trial">     
 
-    <h1>MedCabinet <i class="fas fa-cannabis"></i></h1>
+    <h1></h1><img alt="The Med Cab logo" src="../img/Logo2.png"/>
     <EntraDiv>
       <FormikSignUp />
       <FormikSignIn />
