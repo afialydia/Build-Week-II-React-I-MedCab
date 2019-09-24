@@ -15,7 +15,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      {/* <ProfileTitle>Our Top Recommendations</ProfileTitle> */}
+
       <ProfileCard />
      <Entrance />
     </div>
