@@ -1,13 +1,20 @@
 import React from "react";
-import RecCards from "./RecCards";
+// import Axios from "./axios";
 import { Wrapper } from "./Styles";
+import ProfileTitle from "./ProfileTitle";
+import RecCards from "./RecCards"; //Can remove later once axios is done!
+
 
 const ProfileCard = () => {
   return (
     <Wrapper>
-        <RecCards />
+        <ProfileTitle />
+        <RecCards /> 
+        {/* <Axios /> */}
     </Wrapper>
   );
 }
 
 export default ProfileCard;
+
+
