@@ -1,8 +1,15 @@
-import React from 'react';
-import { Card, Image, Icon } from 'semantic-ui-react';
+import React, { useState } from 'react';
+import { Card, Button, Icon } from 'semantic-ui-react';
 
 export default function StrainCard({ data }) {
-    console.log(data);
+
+    const [favorites, setFavorites] = useState([])
+
+    const handleClick = (event, data) => {
+        setFavorites(favorites.concat(data.Strain))
+        console.log(favorites);
+    }
+
     return (
         <Card>
             <Card.Content>
@@ -14,8 +21,12 @@ export default function StrainCard({ data }) {
                 </Card.Description>
             </Card.Content>
             <Card.Content extra>
+                <Button onClick={(event) => handleClick(event, data)}>Add to Favorites</Button>
+            </Card.Content>
+            <Card.Content extra>
                 <Icon name="star" />
                 Rating: {data.Rating}/5
+
             </Card.Content>
         </Card>
     )

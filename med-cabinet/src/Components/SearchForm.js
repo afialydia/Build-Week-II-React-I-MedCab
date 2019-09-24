@@ -45,12 +45,9 @@ const SearchContainerDiv = styled.div`
 
 const StrainCardContainer = styled.div`
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     width: 100%;
-
-    StrainCard {
-        margin: 1em;
-    }
 `
 
 export default function SearchForm() {
@@ -104,7 +101,7 @@ export default function SearchForm() {
         </Form>
         </SearchContainerDiv>
         <StrainCardContainer>
-            {searchResults.map(item => <StrainCard data={item}></StrainCard>)}
+            {searchResults.map(item => <StrainCard data={item} className={item}></StrainCard>)}
         </StrainCardContainer>
         </>
     )
