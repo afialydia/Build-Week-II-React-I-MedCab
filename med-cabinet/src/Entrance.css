@@ -1,0 +1,18 @@
+*{
+    box-sizing: border-box;
+    font-family: Open Sans;
+    color:rgb(141,161,34);
+}
+
+.trial{
+    background-image: url("./img/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    
+}
+
+.fields{
+    background: rgb(74,58,53);
+    color:rgb(206,212,182);
+}

@@ -6,6 +6,6 @@ export default function Header() {
   return (
     <ImageTweak>
         <Image src='/Logo.png' alt="Med Cab Logo" />
-    </ImageTweak>
+    </ImageTweak>   
   );
 }

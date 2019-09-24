@@ -1,25 +1,20 @@
 import React from 'react';
-import Header from "./Components/Header";
 import './App.css';
 import ProfileCard from "./Components/ProfileCard";
+import Profile from "./Components/Profile";
 import Entrance from "./Components/Entrance";
+import SearchForm from "./Components/SearchForm";
+import { Route } from 'react-router-dom';
 
-// <<<<<<< HEAD
-// import { ProfileTitle } from "./Components/Styles";
-// =======
-// import Entrance from "./Components/Entrance";
 
-// >>>>>>> 159e073f83d258d38daa1fddb434df88a103b892
-
-function App() {
+function App() { 
   return (
     <div className="App">
-      <Header />
-
-      <ProfileCard />
-     <Entrance />
+      <Route exact path='/' component={Entrance}/>
+      <Route exact path='/search' component={SearchForm}/>
+      <Route exact path='/profile' component={ProfileCard}/>
     </div>
-  );
+    )
 }
 
 export default App;

@@ -5,10 +5,10 @@ import styled from "styled-components";
 import {withFormik, Form, Field} from "formik";
 import axios from "axios";
 
+
 const Wrapper = styled.div`
 max-width: 80%;
 min-height: 40vh;
-background-image: url(../img/bgp.jpg);
 /* color:rgb(208,136,10); */
 margin: 0 auto;
 /* align-items:center; */
@@ -18,14 +18,14 @@ display: flex;
 flex-direction: column;
 
 `
-
 const LogIn = styled.div`
 display:flex;
 flex-direction: column;
 justify-content: space-evenly;
 height: 60vh;
-border: 3px solid rgb(64,64,64);
-background: linear-gradient(110deg, rgb(13,112,121) 60%, rgb(243,243,243) 60%);border-radius:12px;
+/* border: 3px solid rgb(64,64,64); */
+background: rgb(206,212,182,.6);
+border-radius:12px;
 width: 25vw;
 align-items: center;
 color: rgb(64,64,64)
@@ -64,41 +64,37 @@ const SignUp = ({
     return(
     <Wrapper>
         
-        <Form><LogIn>
+        <Form>
+        <LogIn>
           <span>
-          <Field type="text" name="name" placeholder="Name"/>
+          <Field className="fields" type="text" name="username" placeholder="Username"/>
           { touched.name && errors.name && <p>{errors.name}</p> }
-          </span>
-         
-          <span>
-          <Field type="email" name="email" placeholder="Email"/>
-          { touched.email && errors.email && <p>{errors.email}</p> }
           </span>
 
           <span>
-          <Field type="password" name="password" placeholder="Password"/>
+          <Field className="fields" type="password" name="password" placeholder="Password"/>
            { touched.password && errors.password && <p>{errors.password}</p> }
            </span>
 
            <span>
-          <Field type="password" name="password" placeholder="Confirm Password"/>
+          <Field className="fields" type="password" name="password" placeholder="Confirm Password"/>
            { touched.password && errors.password && <p>{errors.password}</p> }
            </span>
 
           
 
-          <Field component="select" name="DesiredRole">
+          <Field className="fields" component="select" name="DesiredRole">
               <option value="Pick One"> Pick One</option>
-              <option value="UX Design"> UX Design</option>
-              <option value="Front End Development">Front End Development</option>
-              <option value="Back End Development">Back End Development</option>
+              <option value="Medical Use"> Medical Use</option>
+              <option value="Recreational Use">Recreational Use</option>
+              <option value="A Bit of Both">A Bit of Both</option>
           </Field>
 
             <label>Terms Of Service
             <Field type="checkbox" name="ToS" checked={values.ToS}/>
             </label>
 
-          <Thing type="submit">Submit</Thing>
+          <button type="submit">Submit</button>
         </LogIn>
         </Form>
        

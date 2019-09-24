@@ -16,7 +16,6 @@ margin: 0 auto;
 /* border-radius:12px; */
 display: flex;
 flex-direction: column;
-
 `
 
 const LogIn = styled.div`
@@ -24,8 +23,8 @@ display:flex;
 flex-direction: column;
 justify-content: space-evenly;
 height: 60vh;
-/* border: 3px solid rgb(64,64,64); */
-background: linear-gradient(110deg, rgb(13,112,121) 60%, rgb(243,243,243) 60%);
+// border: 3px solid rgb(64,64,64);
+background: rgb(206,212,182,.6);
 border-radius:12px;
 width: 25vw;
 align-items: center;
@@ -66,38 +65,18 @@ const SignIn = ({
     <Wrapper>
         
         <Form><LogIn>
-          <span>
-          <Field type="text" name="name" placeholder="Name"/>
-          { touched.name && errors.name && <p>{errors.name}</p> }
-          </span>
+          
          
           <span>
-          <Field type="email" name="email" placeholder="Email"/>
+          <Field className="fields" type="email" name="email" placeholder="Email"/>
           { touched.email && errors.email && <p>{errors.email}</p> }
           </span>
 
           <span>
-          <Field type="password" name="password" placeholder="Password"/>
+          <Field className="fields" type="password" name="password" placeholder="Password"/>
            { touched.password && errors.password && <p>{errors.password}</p> }
            </span>
-
-           <span>
-          <Field type="password" name="password" placeholder="Confirm Password"/>
-           { touched.password && errors.password && <p>{errors.password}</p> }
-           </span>
-
-          
-
-          <Field component="select" name="DesiredRole">
-              <option value="Pick One"> Pick One</option>
-              <option value="UX Design"> UX Design</option>
-              <option value="Front End Development">Front End Development</option>
-              <option value="Back End Development">Back End Development</option>
-          </Field>
-
-            <label>Terms Of Service
-            <Field type="checkbox" name="ToS" checked={values.ToS}/>
-            </label>
+  
 
           <Thing type="submit">Submit</Thing>
         </LogIn>
