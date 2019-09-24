@@ -10,7 +10,7 @@
 // import RecCards from "./RecCards";
 
 
-// const Recs = () => {
+// const Axios = () => {
 
 //   const [state, setState] = useState([]);
 
@@ -18,9 +18,10 @@
 //     axios
 //     .get(INSERT API URL)
 //     .then(res => {
-//       const recData = res.data.????;
+//       const recData = res.data;
 //       console.log(recData);
 //       setState(recData);
+//     // console.log(res.data);
 //     }, [])
 //     .catch(error => {
 //       console.log(error);
@@ -32,10 +33,11 @@
 //       {state.map(data => {
 //           return (
 //             <RecCards 
-//               key={data.id}
-//               id={data.id}
-//               strain={data.strain}
-//               effect={data.effect}
+//                 name={data.name}
+//             //   key={data.id}
+//             //   id={data.id}
+//             //   strain={data.strain}
+//             //   effect={data.effect}
 //             />
 //           )
 //       })}
@@ -43,4 +45,4 @@
 //   );
 // }
 
-// export default CharacterList;
+// export default Axios;

@@ -1,36 +1,19 @@
-//NEEDS PROPS 
-
 import React from 'react'
-import { One, Two, Three, Button, Info, ProfileTitle } from "./Styles";
+// import { One, Two, Three, Button, Info } from "./Styles";
+import { One, Button, Info } from "./Styles";
 
-const RecCards = () => (
+
+
+const RecCards = () => (          
+                                                      
     <div>
-        <ProfileTitle>Our Top Recommendations</ProfileTitle>
         <One className= "recommendation-one">
-            {/* <h3>Recommendation 1 is:</h3>  */}
-            <Info>Strain: Gg-4 </Info>
-            <Info>Genetic Attribute: Sativa-Dominant Hybrid</Info>
-            <Info>Effects: Relaxed, Happy, Euphoric, Uplifted, Hungry</Info>     
-            <Button>Save</Button> 
-            <Button>Delete</Button>
-        </One>  
-        <Two className= "recommendation-two">
-            {/* <h4>Recommendation 2 is:</h4> */}
-            <Info>Strain: Gg-4 </Info>
-            <Info>Genetic Attribute: Sativa-Dominant Hybrid</Info>
-            <Info>Effects: Relaxed, Happy, Euphoric, Uplifted, Hungry</Info>     
-            <Button>Save</Button> 
-            <Button>Delete</Button>
-        </Two> 
-        <Three className= "recommendation-three">
-            {/* <h4>Recommendation 3 is:</h4> */}
-            <Info>Strain: Gg-4 </Info>
-            <Info>Genetic Attribute: Sativa-Dominant Hybrid</Info>
-            <Info>Effects: Relaxed, Happy, Euphoric, Uplifted, Hungry</Info>     
-            <Button>Save</Button> 
-            <Button>Delete</Button>
-        </Three> 
-        {/* <Button>TRY AGAIN?</Button> */}
+            <Info>SWAPI TEST: </Info>
+            <Info>Strain: </Info>                                              
+            <Info>Genetic Attribute: </Info>                  
+            <Info>Effects: </Info>      
+            <Button>Delete Selection</Button>
+        </One>
     </div>
 )
 
