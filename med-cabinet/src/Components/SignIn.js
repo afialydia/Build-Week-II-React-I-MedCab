@@ -15,9 +15,7 @@ margin: 0 auto;
 /* border: 5px dashed; */
 /* border-radius:12px; */
 display: flex;
-flex-direction: column;
-
-`
+flex-direction: column;`
 
 const LogIn = styled.div`
 display:flex;
@@ -29,10 +27,9 @@ background: rgb(206,212,182,.6);
 border-radius:12px;
 width: 25vw;
 align-items: center;
-color: rgb(64,64,64)
-`;
+color: rgb(64,64,64);`
 
-const Thing = styled.button`
+ const Thing = styled.button`
   color: rgb(64,64,64);
 
   ::before {
@@ -41,92 +38,76 @@ const Thing = styled.button`
 
   :hover {
     color: rgb(13,112,121);
-  }
-`
+  }` 
 
 
 
+
+
+ 
 const SignIn = ({
     values,
     errors,
     touched,
-    status 
-}) =>{
+    isSubmitting
+    
+}) => (
+    
+        <Form><LogIn> 
 
-    const [users, setUsers] = useState([])
-    useEffect(()=>{
-        if (status) {
-            setUsers(users => [...users, status])
-        }
-    }, [status])
+        <div><Field type="text" name="username" placeholder="Choose Username" className="fields" />
+        {touched.username && errors.username && <p>{errors.username}</p>}
+        </div>
 
-
-
-    return(
-    <Wrapper>
-        
-        <Form><LogIn>
-          
-         
-          <span>
-          <Field className="fields" type="email" name="email" placeholder="Email"/>
-          { touched.email && errors.email && <p>{errors.email}</p> }
-          </span>
-
-          <span>
-          <Field className="fields" type="password" name="password" placeholder="Password"/>
-           { touched.password && errors.password && <p>{errors.password}</p> }
-           </span>
-  
-
-          <Thing type="submit">Submit</Thing>
-        </LogIn>
-        </Form>
+        <div><Field type="password" name="password" placeholder="Password" className="fields" />
+        {touched.password && errors.password && <p>{errors.password}</p>}
+        </div>
        
-        {users.map(user=>( 
-            <div key={user.id}>
-                <span>Name: {user.name}</span>
-                <span>Email: {user.email}</span>
-                <span>Desired Role: {user.DesiredRole}</span>
-            </div>
-        ))}
 
-    </Wrapper>
-    )
-    }
+        <button disabled={isSubmitting}>Submit</button>
+       </LogIn> </Form>
+    
+)
 
-const FormikSignIn =  withFormik({
-    mapPropsToValues({
-        name, 
-        email, 
-        password, 
-        ToS, 
-        DesiredRole
-    }){
+const FormikSignIn = withFormik({
+    mapPropsToValues({username, password, over20, use}){
         return{
-        name: name || "",
-        email: email ||'',
-        password: password || "",
-        ToS: ToS || false,
-        DesiredRole: DesiredRole || "Pick One"
+            username: username || '',
+            password: password || ''
+        
         }
     },
     validationSchema: Yup.object().shape({
-        name: Yup.string().required("Please enter a name."),
-        email: Yup.string().email("Looks like you're missing something. Please enter a valid email address.").required("Please enter a email address."),
-        password: Yup.string().min(8).required("Please enter a password."),
-    }),
-    handleSubmit(values, {setStatus}){
-        axios.post('https://reqres.in/api/users', values)
-        .then(res =>{
-            console.log("these are the values", values)
-            setStatus(res.data);
-        })
-        .catch(err => console.log(err))
-    }
+        username: Yup.string().min(4).required('Username is required'),
+        password: Yup.string().required('Password is required')
 
-})(SignIn);
+
+    }),
+    handleSubmit(values, {
+        resetForm, 
+        setErrors,
+        setSubmitting,
+        setStatus
+    }){
+        console.log(values)
+        if( values.username === 'Shelly12'){
+            setErrors({ username: 'Username already taken.'})
+        } else {
+            resetForm()
+        }
+        setSubmitting(false)
+
+        axios
+            .post('https://medcabinet-backend.herokuapp.com/api/auth/login ', values)
+            .then(res=>{
+                console.log('login',res)
+                setStatus(res.data)
+            })
+            .catch(err=>console.log("somethingswronglogin", err))
+    }
+})(SignIn)
+
 
 render(<FormikSignIn />, document.getElementById("root"))
 
-export default FormikSignIn;
+export default FormikSignIn
