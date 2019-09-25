@@ -1,10 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Header from "./Components/Header";
 import './App.css';
-<<<<<<< HEAD
-=======
 import 'semantic-ui-css/semantic.min.css';
-import ProfileCard from "./Components/ProfileCard";
->>>>>>> 8e848e86be28629f7c4e34aa4b7fa9a4464cb348
 import Profile from "./Components/Profile";
 import Entrance from "./Components/Entrance";
 import SearchForm from "./Components/SearchForm";
@@ -12,11 +9,17 @@ import { Route } from 'react-router-dom';
 
 
 function App() { 
+
+  // favorites state is accessible by both the ProfileCard and SearchForm components
+  const [favorites, setFavorites] = useState([])
+
   return (
     <div className="App">
       <Route exact path='/' component={Entrance}/>
-      <Route exact path='/search' component={SearchForm}/>
-      <Route exact path='/profile' component={Profile}/>
+
+      <Route exact path='/search' render={(props) => <SearchForm favorites={favorites} setFavorites={setFavorites}/>}/>
+      <Route exact path='/profile' render={(props) => <Profile favorites={favorites}/>}/>
+
     </div>
     )
 }

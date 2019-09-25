@@ -6,6 +6,7 @@ import ProfileTitle from "./ProfileTitle";
 
 
 const ProfileCard = () => {
+  
   return (
     <Wrapped>
         <ProfileTitle />

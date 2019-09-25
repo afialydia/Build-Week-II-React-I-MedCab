@@ -1,7 +1,7 @@
 *{
     box-sizing: border-box;
     font-family: Open Sans;
-    color:rgb(141,161,34);
+    color:rgb(13,112,121);
 }
 
 .trial{
@@ -15,4 +15,17 @@
 .fields{
     background: rgb(74,58,53);
     color:rgb(206,212,182);
+    border-radius: 6px;
+    
+}
+
+label{
+    display:flex;
+}
+
+
+.logo{
+    margin: 3%;
+    /* background: rgb(206,212,182,.6); */
+    /* border:  2px solid grey; */
 }
