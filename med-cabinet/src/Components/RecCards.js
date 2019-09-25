@@ -1,8 +1,6 @@
 import React from 'react'
 import { One, Button, Info } from "./Styles";
 
-
-
 function RecCards({ data, favorites, setFavorites }) {     
 
     const handleDelete = () => {
@@ -21,4 +19,5 @@ function RecCards({ data, favorites, setFavorites }) {
         </div>
     )
 }    
+
 export default RecCards;
