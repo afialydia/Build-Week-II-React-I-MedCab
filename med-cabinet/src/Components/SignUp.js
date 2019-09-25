@@ -5,6 +5,7 @@ import styled from "styled-components";
 import {withFormik, Form, Field} from "formik";
 import axios from "axios";
 
+
 const Wrapper = styled.div`
 max-width: 80%;
 min-height: 40vh;
@@ -17,7 +18,6 @@ display: flex;
 flex-direction: column;
 
 `
-
 const LogIn = styled.div`
 display:flex;
 flex-direction: column;

@@ -16,7 +16,6 @@ margin: 0 auto;
 /* border-radius:12px; */
 display: flex;
 flex-direction: column;
-
 `
 
 const LogIn = styled.div`
@@ -24,7 +23,7 @@ display:flex;
 flex-direction: column;
 justify-content: space-evenly;
 height: 60vh;
-/* border: 3px solid rgb(64,64,64); */
+// border: 3px solid rgb(64,64,64);
 background: rgb(206,212,182,.6);
 border-radius:12px;
 width: 25vw;
