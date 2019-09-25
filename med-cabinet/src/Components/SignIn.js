@@ -5,41 +5,27 @@ import styled from "styled-components";
 import {withFormik, Form, Field} from "formik";
 import axios from "axios";
 
-const Wrapper = styled.div`
+const Wrap = styled.div`
 max-width: 80%;
-min-height: 40vh;
-background-image: url(../img/bgp.jpg);
-/* color:rgb(208,136,10); */
 margin: 0 auto;
 /* align-items:center; */
 /* border: 5px dashed; */
 /* border-radius:12px; */
 display: flex;
-flex-direction: column;`
+flex-direction: column;
+height: 30vh;
+width: 30vw;
+border-radius:12px;
+background: rgb(206,212,182,.6);`
 
 const LogIn = styled.div`
 display:flex;
 flex-direction: column;
-justify-content: space-evenly;
-height: 60vh;
-/* border: 3px solid rgb(64,64,64); */
-background: rgb(206,212,182,.6);
-border-radius:12px;
-width: 25vw;
+/* justify-content: space-evenly; */
+padding: 10%;
 align-items: center;
+margin: auto;
 color: rgb(64,64,64);`
-
- const Thing = styled.button`
-  color: rgb(64,64,64);
-
-  ::before {
-    content: '🚀';
-  }
-
-  :hover {
-    color: rgb(13,112,121);
-  }` 
-
 
 
 
@@ -52,8 +38,9 @@ const SignIn = ({
     isSubmitting
     
 }) => (
-    
-        <Form><LogIn> 
+    <Wrap>
+        <Form>
+            <LogIn> 
 
         <div><Field type="text" name="username" placeholder="Choose Username" className="fields" />
         {touched.username && errors.username && <p>{errors.username}</p>}
@@ -65,8 +52,9 @@ const SignIn = ({
        
 
         <button disabled={isSubmitting}>Submit</button>
-       </LogIn> </Form>
-    
+            </LogIn> 
+       </Form>
+    </Wrap>
 )
 
 const FormikSignIn = withFormik({
@@ -98,7 +86,7 @@ const FormikSignIn = withFormik({
         setSubmitting(false)
 
         axios
-            .post('https://medcabinet-backend.herokuapp.com/api/auth/login ', values)
+            .post('https://medcabinet-backend.herokuapp.com/api/auth/login', values)
             .then(res=>{
                 console.log('login',res)
                 setStatus(res.data)

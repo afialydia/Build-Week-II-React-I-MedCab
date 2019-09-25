@@ -1,0 +1,10 @@
+# Frontend
+
+```/api/auth/register (post)
+/api/auth/login (post)
+/api/auth/logout (get)
+
+/api/user (update, delete)
+/api/user/strains (get, post, delete)
+
+/api/strains (get (query parameters)) (recommended)```

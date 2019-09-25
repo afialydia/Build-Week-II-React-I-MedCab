@@ -5,26 +5,26 @@ import styled from "styled-components";
 import {withFormik, Form, Field} from "formik";
 import axios from "axios";
 
-const Wrapper = styled.div`
+const Wrap = styled.div`
 max-width: 80%;
-min-height: 40vh;
-/* color:rgb(208,136,10); */
 margin: 0 auto;
 /* align-items:center; */
 /* border: 5px dashed; */
 /* border-radius:12px; */
 display: flex;
-flex-direction: column;`
+flex-direction: column;
+height: 30vh;
+width: 30vw;
+border-radius:12px;
+background: rgb(206,212,182,.6);`
 
 const LogIn = styled.div`
 display:flex;
 flex-direction: column;
 /* justify-content: space-evenly; */
-height: 60vh;
-background: rgb(206,212,182,.6);
-border-radius:12px;
-width: 25vw;
+padding: 10%;
 align-items: center;
+margin: auto;
 color: rgb(64,64,64);`
 
 
@@ -48,7 +48,7 @@ const SignUp = ({
     isSubmitting
     
 }) => (
-    
+    <Wrap>
         <Form><LogIn> 
 
         <div><Field type="text" name="username" placeholder="Choose Username" className="fields" />
@@ -59,7 +59,7 @@ const SignUp = ({
         {touched.password && errors.password && <p>{errors.password}</p>}
         </div>
         
-        <label>I am 21+ years old. <Field type ="checkbox" name="over20" checked={values.over20}/></label>
+        <label><h4>I am 21+ years old.</h4><Field type ="checkbox" name="over20" checked={values.over20}className="fields"/></label>
 
         <Field className="fields" component="select" name="use">
             <option value="Pick One"> Pick One</option>
@@ -69,7 +69,7 @@ const SignUp = ({
         </Field>
 
         <button disabled={isSubmitting}>Submit</button>
-       </LogIn> </Form>
+       </LogIn> </Form></Wrap>
     
 )
 

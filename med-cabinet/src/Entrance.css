@@ -15,8 +15,14 @@
 .fields{
     background: rgb(74,58,53);
     color:rgb(206,212,182);
+    border-radius: 6px;
     
 }
+
+label{
+    display:flex;
+}
+
 
 .logo{
     margin: 3%;
