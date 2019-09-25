@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { Form, Button, Field, Input} from 'semantic-ui-react';
+import { Form, Button, Field, Input, Select} from 'semantic-ui-react';
 import StrainCard from "./StrainCard";
 import strainData from "../dummydata/data"
 
@@ -34,9 +34,6 @@ const SearchContainerDiv = styled.div`
     justify-content: center;
     align-items: center;
 
-    * {
-        padding: 0.5em;
-    }
 
     Button {
         width: 100%;
@@ -93,17 +90,19 @@ export default function SearchForm({ favorites, setFavorites }) {
         </SubHeadingContainerDiv>
         <SearchContainerDiv>
          <Form onSubmit={() => handleSubmit()}>
-            <Form.Field>
+            <Form.Field className="search-bar">
                 <label>
                     Search Strains 
                 </label>
-                <input type="text" onChange={event => handleChange(event)}/> 
+                <input type="text" onChange={event => console.log(event.target.value())}/> 
             </Form.Field>
-            <Form.Field>
-                control={Select}
-                label='type'
-                options={options}
-                placeholder='Strain Type'
+            <Form.Field id='strainType'
+            control={Select}
+            options={options}
+            placeholder='Strain Type'
+            onChange={event => console.log(Select)}
+            >
+                
             </Form.Field>
         <ButtonContainer>
             <Button >Search</Button>
