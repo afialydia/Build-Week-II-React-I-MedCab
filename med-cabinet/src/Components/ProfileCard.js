@@ -1,17 +1,17 @@
 import React from "react";
-// import Axios from "./axios";
-import { Wrapper } from "./Styles";
+import UserData from "./UserData";
+import { Wrapped } from "./Styles";
 import ProfileTitle from "./ProfileTitle";
-import RecCards from "./RecCards"; //Can remove later once axios is done!
+
 
 
 const ProfileCard = () => {
+  
   return (
-    <Wrapper>
+    <Wrapped>
         <ProfileTitle />
-        <RecCards /> 
-        {/* <Axios /> */}
-    </Wrapper>
+        <UserData />
+    </Wrapped>
   );
 }
 
