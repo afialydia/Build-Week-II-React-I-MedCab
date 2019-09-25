@@ -4,6 +4,8 @@ import FormikSignUp from "./SignUp";
 import styled from "styled-components";
 import '../Entrance.css'
 import { Image } from "semantic-ui-react";
+import { Route, BrowserRouter } from 'react-router-dom';
+
 
 
 
