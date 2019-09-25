@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import styled from 'styled-components';
 import { Form, Button } from 'semantic-ui-react';
 import StrainCard from "./StrainCard";
@@ -50,15 +49,13 @@ const StrainCardContainer = styled.div`
     width: 100%;
 `
 
-export default function SearchForm() {
+export default function SearchForm({ favorites, setFavorites }) {
 
     const [strainQuery, setQuery] = useState({
         search: "",
     });
 
     const [searchResults, setResults] = useState([]);
-
-    const [favorites, setFavorites] = useState([])
 
     const handleChange = event => {
         setQuery({...strainQuery, search: event.target.value});
