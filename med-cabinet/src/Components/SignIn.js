@@ -23,16 +23,23 @@ display: flex;
 flex-direction: column;
 /* justify-content: space-evenly; */
 padding: 10%;
-justify-content: space-evenly;
-height: 60vh;
-// border: 3px solid rgb(64,64,64);
-background: rgb(206,212,182,.6);
-border-radius:12px;
-width: 25vw;
 align-items: center;
 margin: auto;
 color: rgb(64,64,64);`
 
+
+/* 
+const Thing = styled.button`
+  color: rgb(64,64,64);
+
+  ::before {
+    content: '🚀';
+  }
+
+  :hover {
+    color: rgb(13,112,121);
+  }
+` */
 
 
 

@@ -58,6 +58,10 @@ const SignUp = ({
         <div><Field type="password" name="password" placeholder="Password" className="fields" />
         {touched.password && errors.password && <p>{errors.password}</p>}
         </div>
+
+        <div><Field type="password" name="confirmPassword" placeholder="confirm password" className="fields" />
+        {touched.confirmPassword && errors.confirmPassword && <p>{errors.confirmPassword}</p>}
+        </div>
         
         <label><h4>I am 21+ years old.</h4><Field type ="checkbox" name="over20" checked={values.over20}className="fields"/></label>
 
@@ -74,17 +78,20 @@ const SignUp = ({
 )
 
 const FormikSignUp = withFormik({
-    mapPropsToValues({username, password, over20, use}){
+    mapPropsToValues({username, password, confirmPassword, over20, use}){
         return{
             username: username || '',
             password: password || '',
+            confirmPassword: confirmPassword || '',
             over20: over20 || false,
             use: use || 'Pick One'
+
         }
     },
     validationSchema: Yup.object().shape({
         username: Yup.string().min(4).required('Username is required'),
-        password: Yup.string().min(8).required('Password is required')
+        password: Yup.string().min(8).required('Password is required'),
+        confirmPassword: Yup.string().required().label("Confirm Password").test("passwords-match", "passwords must match", function(value){return this.parent.password === value;})
         // over20: Yup.checked().required()
     }),
     handleSubmit(values, {
