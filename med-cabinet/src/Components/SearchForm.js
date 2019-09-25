@@ -72,7 +72,7 @@ export default function SearchForm({ favorites, setFavorites }) {
             .then(res => console.log(res))
             .catch(err => console.log(err))
     } */
-
+    
     const handleSubmit = () => {
          setResults(strainData.filter(strain => strain.Description.includes(strainQuery.search) && strain.Rating > 4.9));
     }
