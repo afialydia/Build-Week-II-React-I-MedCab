@@ -95,7 +95,7 @@ export default function SearchForm({ favorites, setFavorites }) {
                 <label>
                     Search Strains 
                 </label>
-                <input type="text"/> 
+                <input type="text" onChange={handleChange}/> 
             </Form.Field>
             <Form.Field id='strainType'
             control={Select}
