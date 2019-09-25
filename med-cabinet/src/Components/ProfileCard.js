@@ -1,19 +1,15 @@
 import React from "react";
-import UserData from "./UserData";
 import { Wrapped } from "./Styles";
 import ProfileTitle from "./ProfileTitle";
 
+const ProfileCard = ({ favorites, setFavorites }) => {
 
-
-const ProfileCard = () => {
-  
   return (
     <Wrapped>
         <ProfileTitle />
-        <UserData />
+        {favorites.map(favorite => <RecCards data={favorite} favorites={favorites} setFavorites={setFavorites}></RecCards>)}
     </Wrapped>
-  );
-}
+  );}
 
 export default ProfileCard;
 
