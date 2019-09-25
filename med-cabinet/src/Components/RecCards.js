@@ -1,12 +1,16 @@
-import React from 'react'
+    import React from 'react'
 // import { One, Two, Three, Button, Info } from "./Styles";
 import { One, Button, Info } from "./Styles";
 
 
 
-function RecCards({ data }) {     
+function RecCards({ data, favorites, setFavorites }) {     
 
-    console.log(data);
+    console.log(favorites);
+
+    const handleDelete = () => {
+        setFavorites(favorites.filter(item => item.Strain !== data.Strain))
+    }
 
     return (
         <div>
@@ -15,7 +19,7 @@ function RecCards({ data }) {
                 <Info>Type: {data.Type}</Info>                                              
                 <Info>Flavors: {data.Flavor}</Info>                  
                 <Info>Effects: {data.Effects}</Info>      
-                <Button>Delete Selection</Button>
+                <Button onClick={()=> handleDelete()}>Delete Selection</Button>
             </One>
         </div>
     )

@@ -19,7 +19,7 @@ function App() {
     <div className="App">
       <Route exact path='/' component={Entrance}/>
       <Route exact path='/search' render={(props) => <SearchForm favorites={favorites} setFavorites={setFavorites}/>}/>
-      <Route exact path='/profile' render={(props) => <ProfileCard favorites={favorites}/>}/>
+      <Route exact path='/profile' render={(props) => <ProfileCard favorites={favorites} setFavorites={setFavorites}/>}/>
       <Route exact path='/testprofile' render={(props) => <TestProfile favorites={favorites}/>}/>
     </div>
     )
