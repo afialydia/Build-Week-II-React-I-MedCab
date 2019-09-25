@@ -3,6 +3,7 @@ import img from '../img/background.jpg';
 
 //Styles profile page
 const ProfilePage = styled.div `
+    // border: dotted orange 3px;
     background-size: cover;
     background-image: url(${img});
     background-repeat: no-repeat;
@@ -20,7 +21,7 @@ const ProfilePage = styled.div `
 `
 
 //Called on ProfileCard.js to style the entire card where each rec card is rendered
-const Wrapper = styled.body`   
+const Wrapped = styled.div`   
     background: black;
     // border: dashed hotpink 3px;          
     border-radius: 10px;
@@ -50,6 +51,7 @@ const ProfileTitle = styled.h1 `
     width: 70%;
     height: 90px;
     text-align: center;
+    // border: green solid 2px;
 `
 
 //Called on RecCards.js to style third recommendation card
@@ -65,33 +67,6 @@ const One = styled.div `
     border-radius:12px;   
 `;
 
-
-//Called on RecCards.js to style second recommendation card
-const Two = styled.div `
-    margin: 10px 15%;
-    width: 70%;
-    display: flex;
-    padding: 20px;
-    flex-direction: column;
-    align-items: center;    
-    border: 3px solid rgb(13,112,121);
-    background: rgb(206,212,182,.6);
-    border-radius:12px;  
-`
-
-//Called on RecCards.js to style third recommendation card
-const Three = styled.div `
-        margin: 10px 15%;
-    width: 70%;
-    display: flex;
-    padding: 20px;
-    flex-direction: column;
-    align-items: center;    
-    border: 3px solid rgb(13,112,121);
-    background: rgb(206,212,182,.6);
-    border-radius:12px;  
-`
-
 //Called on RecCards.js to style the h3 props/rendered data
 const Info = styled.p `
     font-family: 'Open Sans', sans-serif;
@@ -101,12 +76,6 @@ const Info = styled.p `
     line-height: 20px;
     // color: rgb(13,112,121);
     color: black;
-`
-
-//Called on Header.js to style the Page Title 
-const Title = styled.h1 `
-    color: blue;
-    font-family: 'Bree Serif', serif;
 `
 
 //Called on RecCards.js to style save/delete buttons
@@ -120,4 +89,4 @@ const Button = styled.button `
     justify-content: center;
 `
 
-export { Wrapper, One, Two, Three, Title, ProfileTitle, Button, Info, ImageTweak, ProfilePage };
+export { Wrapped, One, ProfileTitle, Button, Info, ImageTweak, ProfilePage };
