@@ -12,7 +12,7 @@ const ProfileCard = ({ favorites }) => {
     <>
     <Wrapper>
         <ProfileTitle />
-        <RecCards /> 
+        {favorites.map(favorite => <RecCards data={favorite}></RecCards>)}
         {/* <Axios /> */}
     </Wrapper>
   </>

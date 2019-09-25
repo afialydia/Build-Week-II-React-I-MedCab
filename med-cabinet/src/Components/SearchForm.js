@@ -82,6 +82,7 @@ export default function SearchForm({ favorites, setFavorites }) {
         <HeadingContainerDiv>
             <h1>Strain Search</h1>
             </HeadingContainerDiv>
+        <Link to='/testprofile'>Test Profile</Link><br></br>
         <Link to='/profile'>Profile</Link>
         <SubHeadingContainerDiv>
             <p>
