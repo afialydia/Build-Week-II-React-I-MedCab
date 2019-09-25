@@ -1,19 +1,23 @@
 import React from 'react'
 import { One, Button, Info } from "./Styles";
 
+function RecCards({ data, favorites, setFavorites }) {     
 
+    const handleDelete = () => {
+        setFavorites(favorites.filter(item => item.Strain !== data.Strain))
+    }
 
-const RecCards = (props) => (          
-                                                      
-    <div>
-        <One className= "recommendation-one">
-            <Info>SWAPI TEST: {props.name} </Info>
-            <Info>Strain: {props.name}</Info>                                              
-            <Info>Genetic Attribute: </Info>                  
-            <Info>Effects: </Info>      
-            <Button>Delete Selection</Button>
-        </One>
-    </div>
-)
+    return (
+        <div>
+            <One className= "recommendation-one">
+                <Info>Strain: {data.Strain}</Info>
+                <Info>Type: {data.Type}</Info>                                              
+                <Info>Flavors: {data.Flavor}</Info>                  
+                <Info>Effects: {data.Effects}</Info>      
+                <Button onClick={()=> handleDelete()}>Delete Selection</Button>
+            </One>
+        </div>
+    )
+}    
 
 export default RecCards;

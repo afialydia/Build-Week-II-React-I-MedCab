@@ -72,7 +72,7 @@ export default function SearchForm({ favorites, setFavorites }) {
             .then(res => console.log(res))
             .catch(err => console.log(err))
     } */
-
+    
     const handleSubmit = () => {
          setResults(strainData.filter(strain => strain.Description.includes(strainQuery.search) && strain.Rating > 4.9));
     }
@@ -82,6 +82,7 @@ export default function SearchForm({ favorites, setFavorites }) {
         <HeadingContainerDiv>
             <h1>Strain Search</h1>
             </HeadingContainerDiv>
+        <Link to='/testprofile'>Test Profile</Link><br></br>
         <Link to='/profile'>Profile</Link>
         <SubHeadingContainerDiv>
             <p>
@@ -94,7 +95,7 @@ export default function SearchForm({ favorites, setFavorites }) {
                 <label>
                     Search Strains 
                 </label>
-                <input type="text"/> 
+                <input type="text" onChange={handleChange}/> 
             </Form.Field>
             <Form.Field id='strainType'
             control={Select}
