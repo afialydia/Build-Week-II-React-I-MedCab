@@ -1,12 +1,9 @@
-    import React from 'react'
-// import { One, Two, Three, Button, Info } from "./Styles";
+import React from 'react'
 import { One, Button, Info } from "./Styles";
 
 
 
 function RecCards({ data, favorites, setFavorites }) {     
-
-    console.log(favorites);
 
     const handleDelete = () => {
         setFavorites(favorites.filter(item => item.Strain !== data.Strain))

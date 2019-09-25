@@ -4,6 +4,8 @@ import * as Yup from "yup";
 import styled from "styled-components";
 import {withFormik, Form, Field} from "formik";
 import axios from "axios";
+import Auth from "./Auth";
+import {ProtectedRoute} from "./ProtectedRoute";
 
 const Wrap = styled.div`
 max-width: 80%;
@@ -23,16 +25,23 @@ display: flex;
 flex-direction: column;
 /* justify-content: space-evenly; */
 padding: 10%;
-justify-content: space-evenly;
-height: 60vh;
-// border: 3px solid rgb(64,64,64);
-background: rgb(206,212,182,.6);
-border-radius:12px;
-width: 25vw;
 align-items: center;
 margin: auto;
 color: rgb(64,64,64);`
 
+
+/* 
+const Thing = styled.button`
+  color: rgb(64,64,64);
+
+  ::before {
+    content: '🚀';
+  }
+
+  :hover {
+    color: rgb(13,112,121);
+  }
+` */
 
 
 
@@ -43,12 +52,12 @@ const SignIn = ({
     touched,
     isSubmitting
     
-}) => (
+}, props) => (
     <Wrap>
         <Form>
             <LogIn> 
 
-        <div><Field type="text" name="username" placeholder="Choose Username" className="fields" />
+        <div><Field type="text" name="username" placeholder="Username" className="fields" />
         {touched.username && errors.username && <p>{errors.username}</p>}
         </div>
 
@@ -57,7 +66,11 @@ const SignIn = ({
         </div>
        
 
-        <button disabled={isSubmitting}>Submit</button>
+        <button disabled={isSubmitting} onClick={
+            ()=> Auth.login(()=>{
+                props.history.push('/profile');
+            })
+        }>Submit</button>
             </LogIn> 
        </Form>
     </Wrap>

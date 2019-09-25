@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import Header from "./Components/Header";
 import './App.css';
 import 'semantic-ui-css/semantic.min.css';
-import ProfileCard from "./Components/ProfileCard";
 import Profile from "./Components/Profile";
 import TestProfile from "./Components/TestProfile";
 import Entrance from "./Components/Entrance";
 import SearchForm from "./Components/SearchForm";
-import { Route } from 'react-router-dom';
+import { Route, BrowserRouter, Switch } from 'react-router-dom';
+import {ProtectedRoute} from './Components/ProtectedRoute'
 
 
 function App() { 
@@ -17,10 +17,16 @@ function App() {
 
   return (
     <div className="App">
+      <Switch>
       <Route exact path='/' component={Entrance}/>
       <Route exact path='/search' render={(props) => <SearchForm favorites={favorites} setFavorites={setFavorites}/>}/>
+//       <ProtectedRoute exact path='/profile' component={Profile}/>
+      <Route path ="*" component={()=> "404 not found"}/>
+      </Switch>
+
       <Route exact path='/profile' render={(props) => <ProfileCard favorites={favorites} setFavorites={setFavorites}/>}/>
       <Route exact path='/testprofile' render={(props) => <TestProfile favorites={favorites}/>}/>
+
     </div>
     )
 }
