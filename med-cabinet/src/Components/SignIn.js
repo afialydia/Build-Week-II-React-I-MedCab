@@ -4,8 +4,7 @@ import * as Yup from "yup";
 import styled from "styled-components";
 import {withFormik, Form, Field} from "formik";
 import axios from "axios";
-import Auth from "./Auth";
-import {ProtectedRoute} from "./ProtectedRoute";
+import auth from "./auth";
 
 const Wrap = styled.div`
 max-width: 80%;
@@ -44,7 +43,6 @@ const Thing = styled.button`
 ` */
 
 
-
  
 const SignIn = ({
     values,
@@ -66,18 +64,19 @@ const SignIn = ({
         </div>
        
 
-        <button disabled={isSubmitting} onClick={
-            ()=> Auth.login(()=>{
-                props.history.push('/profile');
-            })
-        }>Submit</button>
+        <button disabled={isSubmitting} onClick={()=> {
+            auth.login(() => {
+            });
+        }}>
+            Submit
+        </button>
             </LogIn> 
        </Form>
     </Wrap>
 )
 
 const FormikSignIn = withFormik({
-    mapPropsToValues({username, password, over20, use}){
+    mapPropsToValues({username, password}){
         return{
             username: username || '',
             password: password || ''
@@ -94,7 +93,8 @@ const FormikSignIn = withFormik({
         resetForm, 
         setErrors,
         setSubmitting,
-        setStatus
+        setStatus,
+        props
     }){
         console.log(values)
         if( values.username === 'Shelly12'){
@@ -109,6 +109,7 @@ const FormikSignIn = withFormik({
             .then(res=>{
                 console.log('login',res)
                 setStatus(res.data)
+                props.history.push('/profile')
             })
             .catch(err=>console.log("somethingswronglogin", err))
     }

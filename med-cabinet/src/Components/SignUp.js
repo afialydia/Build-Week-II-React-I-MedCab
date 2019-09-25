@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import styled from "styled-components";
 import {withFormik, Form, Field} from "formik";
 import axios from "axios";
+import auth from "./auth";
 
 const Wrap = styled.div`
 max-width: 80%;
@@ -72,7 +73,12 @@ const SignUp = ({
             <option value="A Bit of Both">A Bit of Both</option>
         </Field>
 
-        <button disabled={isSubmitting}>Submit</button>
+        <button disabled={isSubmitting} onClick={()=> {
+            auth.login(() => {
+            });
+        }}>
+            Submit
+        </button>
        </LogIn> </Form></Wrap>
     
 )
@@ -98,7 +104,8 @@ const FormikSignUp = withFormik({
         resetForm, 
         setErrors,
         setSubmitting,
-        setStatus
+        setStatus,
+        props
     }){
         console.log(values)
         if( values.username === 'Shelly12'){
@@ -113,6 +120,8 @@ const FormikSignUp = withFormik({
             .then(res =>{
                 console.log('axios',res)
                 setStatus(res.data)
+                props.history.push('/profile')
+
             })
         .catch(err =>console.log("somethingswrongsignup", err))
 
