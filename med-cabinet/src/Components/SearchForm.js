@@ -58,7 +58,7 @@ export default function SearchForm() {
 
     const [searchResults, setResults] = useState([]);
 
-    const [testData, setData] = useState([]);
+    const [favorites, setFavorites] = useState([])
 
     const handleChange = event => {
         setQuery({...strainQuery, search: event.target.value});
@@ -101,7 +101,7 @@ export default function SearchForm() {
         </Form>
         </SearchContainerDiv>
         <StrainCardContainer>
-            {searchResults.map(item => <StrainCard data={item} className={item}></StrainCard>)}
+            {searchResults.map(item => <StrainCard data={item} favorites={favorites} setFavorites={setFavorites}></StrainCard>)}
         </StrainCardContainer>
         </>
     )

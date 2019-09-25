@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
 import { Card, Button, Icon } from 'semantic-ui-react';
 
-export default function StrainCard({ data }) {
-
-    const [favorites, setFavorites] = useState([])
+export default function StrainCard({ data, favorites, setFavorites }) {
 
     const handleClick = (event, data) => {
         setFavorites(favorites.concat(data.Strain))
-        console.log(favorites);
     }
 
     return (
