@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { Form, Button } from 'semantic-ui-react';
 import StrainCard from "./StrainCard";
@@ -78,6 +79,7 @@ export default function SearchForm({ favorites, setFavorites }) {
         <HeadingContainerDiv>
             <h1>Strain Search</h1>
             </HeadingContainerDiv>
+        <Link to='/profile'>Profile</Link>
         <SubHeadingContainerDiv>
             <p>
                 Search below to receive personalized recommendations for strains of medicinal marijuana.
