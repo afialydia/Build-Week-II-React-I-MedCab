@@ -29,14 +29,19 @@ border-radius: 12px;
 `;
 
 
-function Entrance() {
-  return (
+function Entrance(props) {
 
+  function pushIt(){
+  
+    props.history.push('/profile')
+  }
+
+  return (
     <EntranDiv className="trial">     
       <Image className="logo" src='/Logo.png' alt="Med Cab Logo" />
     <EntraDiv>
-      <FormikSignUp />
-      <FormikSignIn />
+      <FormikSignUp {...props} />
+      <FormikSignIn {...props} />
     </EntraDiv>
     </EntranDiv>
   );
