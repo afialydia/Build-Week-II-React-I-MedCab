@@ -16,10 +16,10 @@ flex-direction: column;
 height: 30vh;
 width: 30vw;
 border-radius:12px;
-background: rgb(206,212,182,.6);
+background: rgb(206,212,182,.6);`
 
 const LogIn = styled.div`
-display:flex;
+display: flex;
 flex-direction: column;
 /* justify-content: space-evenly; */
 padding: 10%;

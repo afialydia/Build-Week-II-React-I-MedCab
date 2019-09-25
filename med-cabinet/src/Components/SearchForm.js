@@ -94,7 +94,7 @@ export default function SearchForm({ favorites, setFavorites }) {
                 <label>
                     Search Strains 
                 </label>
-                <input type="text" onChange={event => console.log(event.target.value())}/> 
+                <input type="text"/> 
             </Form.Field>
             <Form.Field id='strainType'
             control={Select}
