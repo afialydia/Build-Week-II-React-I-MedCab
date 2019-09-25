@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { Form, Button } from 'semantic-ui-react';
+import { Form, Button, Field, Input} from 'semantic-ui-react';
 import StrainCard from "./StrainCard";
 import strainData from "../dummydata/data"
 
@@ -50,6 +50,12 @@ const StrainCardContainer = styled.div`
     width: 100%;
 `
 
+const options = [
+    { key: 's', text: 'Sativa', value: 'sativa'},
+    { key: 'i', text: 'Indica', value: 'indica'},
+    { key: 'h', text: 'Hybrid', value: 'hybrid'},
+]
+
 export default function SearchForm({ favorites, setFavorites }) {
 
     const [strainQuery, setQuery] = useState({
@@ -92,6 +98,12 @@ export default function SearchForm({ favorites, setFavorites }) {
                     Search Strains 
                 </label>
                 <input type="text" onChange={event => handleChange(event)}/> 
+            </Form.Field>
+            <Form.Field>
+                control={Select}
+                label='type'
+                options={options}
+                placeholder='Strain Type'
             </Form.Field>
         <ButtonContainer>
             <Button >Search</Button>
