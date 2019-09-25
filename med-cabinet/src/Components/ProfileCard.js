@@ -1,5 +1,6 @@
 import React from "react";
 import { Wrapped } from "./Styles";
+import RecCards from './RecCards';
 import ProfileTitle from "./ProfileTitle";
 
 const ProfileCard = ({ favorites, setFavorites }) => {

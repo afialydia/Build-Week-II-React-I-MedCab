@@ -3,6 +3,7 @@ import Header from "./Components/Header";
 import './App.css';
 import 'semantic-ui-css/semantic.min.css';
 import Profile from "./Components/Profile";
+import ProfileCard from "./Components/ProfileCard"
 import TestProfile from "./Components/TestProfile";
 import Entrance from "./Components/Entrance";
 import SearchForm from "./Components/SearchForm";
@@ -20,7 +21,7 @@ function App() {
       <Switch>
       <Route exact path='/' component={Entrance}/>
       <Route exact path='/search' render={(props) => <SearchForm favorites={favorites} setFavorites={setFavorites}/>}/>
-//       <ProtectedRoute exact path='/profile' component={Profile}/>
+      {/*  <ProtectedRoute exact path='/profile' component={Profile}/> */}
       <Route path ="*" component={()=> "404 not found"}/>
       </Switch>
 
