@@ -3,6 +3,8 @@ import FormikSignIn from "./SignIn";
 import FormikSignUp from "./SignUp";
 import styled from "styled-components";
 import '../Entrance.css'
+import { Image } from "semantic-ui-react";
+
 
 
 const EntraDiv = styled.div`
@@ -29,8 +31,7 @@ function Entrance() {
   return (
 
     <EntranDiv className="trial">     
-
-    <h1></h1><img alt="The Med Cab logo" src="../img/Logo2.png"/>
+      <Image className="logo" src='/Logo.png' alt="Med Cab Logo" />
     <EntraDiv>
       <FormikSignUp />
       <FormikSignIn />

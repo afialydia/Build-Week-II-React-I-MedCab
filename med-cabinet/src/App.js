@@ -8,6 +8,7 @@ import Entrance from "./Components/Entrance";
 import SearchForm from "./Components/SearchForm";
 import { Route } from 'react-router-dom';
 
+
 function App() { 
 
   // favorites state is accessible by both the ProfileCard and SearchForm components
@@ -18,6 +19,7 @@ function App() {
       <Route exact path='/' component={Entrance}/>
       <Route exact path='/search' render={(props) => <SearchForm favorites={favorites} setFavorites={setFavorites}/>}/>
       <Route exact path='/profile' render={(props) => <ProfileCard favorites={favorites}/>}/>
+
     </div>
     )
 }
