@@ -74,7 +74,6 @@ export default function SearchForm() {
 
     const handleSubmit = () => {
          setResults(strainData.filter(strain => strain.Description.includes(strainQuery.search) && strain.Rating > 4.9));
-         console.log(searchResults)
     }
 
     return (

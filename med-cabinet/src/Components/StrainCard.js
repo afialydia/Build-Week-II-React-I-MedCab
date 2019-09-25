@@ -4,7 +4,10 @@ import { Card, Button, Icon } from 'semantic-ui-react';
 export default function StrainCard({ data, favorites, setFavorites }) {
 
     const handleClick = (event, data) => {
-        setFavorites(favorites.concat(data.Strain))
+        if (!favorites.includes(data.Strain)) {
+            setFavorites(favorites.concat(data.Strain))
+        }
+        console.log(favorites);
     }
 
     return (
