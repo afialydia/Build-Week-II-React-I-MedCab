@@ -9,7 +9,7 @@ const ProfilePage = styled.div `
     background-repeat: no-repeat;
     border-radius: 12px;
     max-width: 1000px;
-    margin: 0 auto;
+    margin: 50px 15%;
     background-attachment: fixed;
     display: flex;
     flex-direction: column;
@@ -18,6 +18,7 @@ const ProfilePage = styled.div `
     justify-content: space-around;
     box-sizing: border-box;
     padding-bottom: 60px;
+    position: relative;
 `
 
 //Called on ProfileCard.js to style the entire card where each rec card is rendered
@@ -36,6 +37,7 @@ const Wrapped = styled.div`
 //Called on Header.js to style the image logo
 const ImageTweak = styled.div `
     border: solid 4px black;
+    // border: magenta 5px dotted;
     background: rgb(13,112,121);
     width: 30%;
     padding: 15px;
@@ -44,7 +46,7 @@ const ImageTweak = styled.div `
     margin: 20px 30%;
 `
 
-//Called on RecCards.js to style the h1 recommendations title
+//Called on ProfileCard.js to style the h1 recommendations title
 const ProfileTitle = styled.h1 `
     font-family: 'Bree Serif', serif;
     margin: 0 auto;
@@ -63,6 +65,7 @@ const One = styled.div `
     flex-direction: column;
     align-items: center;    
     border: 3px solid rgb(13,112,121);
+    // border: red solid 6px;
     background: rgb(206,212,182,.6);
     border-radius:12px;   
 `;

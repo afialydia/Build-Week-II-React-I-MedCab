@@ -1,20 +1,23 @@
 import React from "react";
-import UserData from "./UserData";
 import { Wrapped } from "./Styles";
 import ProfileTitle from "./ProfileTitle";
+import { One, Button, Info } from "./Styles";
 
 
 
-const ProfileCard = () => {
-  
+const ProfileCard = (props) => {
+
   return (
     <Wrapped>
         <ProfileTitle />
-        <UserData />
+        <One className= "recommendation-one">
+            <Info>Strain: {props.strain}</Info>                                              
+            <Info>Genetic Attribute: {props.type}</Info>                  
+            <Info>Effects: {props.effects}</Info>      
+            <Button>Delete Selection</Button>
+        </One>
     </Wrapped>
   );
 }
 
 export default ProfileCard;
-
-
