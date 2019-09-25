@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { Form, Button } from 'semantic-ui-react';
+import { Form, Button, Field, Input, Select} from 'semantic-ui-react';
 import StrainCard from "./StrainCard";
 import strainData from "../dummydata/data"
 
@@ -34,9 +34,6 @@ const SearchContainerDiv = styled.div`
     justify-content: center;
     align-items: center;
 
-    * {
-        padding: 0.5em;
-    }
 
     Button {
         width: 100%;
@@ -50,15 +47,19 @@ const StrainCardContainer = styled.div`
     width: 100%;
 `
 
-export default function SearchForm() {
+const options = [
+    { key: 's', text: 'Sativa', value: 'sativa'},
+    { key: 'i', text: 'Indica', value: 'indica'},
+    { key: 'h', text: 'Hybrid', value: 'hybrid'},
+]
+
+export default function SearchForm({ favorites, setFavorites }) {
 
     const [strainQuery, setQuery] = useState({
         search: "",
     });
 
     const [searchResults, setResults] = useState([]);
-
-    const [testData, setData] = useState([]);
 
     const handleChange = event => {
         setQuery({...strainQuery, search: event.target.value});
@@ -74,7 +75,6 @@ export default function SearchForm() {
 
     const handleSubmit = () => {
          setResults(strainData.filter(strain => strain.Description.includes(strainQuery.search) && strain.Rating > 4.9));
-         console.log(searchResults)
     }
 
     return (
@@ -82,6 +82,7 @@ export default function SearchForm() {
         <HeadingContainerDiv>
             <h1>Strain Search</h1>
             </HeadingContainerDiv>
+        <Link to='/profile'>Profile</Link>
         <SubHeadingContainerDiv>
             <p>
                 Search below to receive personalized recommendations for strains of medicinal marijuana.
@@ -89,11 +90,19 @@ export default function SearchForm() {
         </SubHeadingContainerDiv>
         <SearchContainerDiv>
          <Form onSubmit={() => handleSubmit()}>
-            <Form.Field>
+            <Form.Field className="search-bar">
                 <label>
                     Search Strains 
                 </label>
-                <input type="text" onChange={event => handleChange(event)}/> 
+                <input type="text"/> 
+            </Form.Field>
+            <Form.Field id='strainType'
+            control={Select}
+            options={options}
+            placeholder='Strain Type'
+            onChange={event => console.log(Select)}
+            >
+                
             </Form.Field>
         <ButtonContainer>
             <Button >Search</Button>
@@ -101,7 +110,7 @@ export default function SearchForm() {
         </Form>
         </SearchContainerDiv>
         <StrainCardContainer>
-            {searchResults.map(item => <StrainCard data={item} className={item}></StrainCard>)}
+            {searchResults.map(item => <StrainCard data={item} favorites={favorites} setFavorites={setFavorites}></StrainCard>)}
         </StrainCardContainer>
         </>
     )
