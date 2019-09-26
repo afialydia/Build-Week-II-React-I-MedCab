@@ -37,16 +37,16 @@ export default class NavBar extends React.Component {
               <NavItem>
                 <NavLink href="/getmeds">Get Meds</NavLink>
               </NavItem>
-              {/* <NavItem>
-                <NavLink href="/signup">Signup</NavLink>
-              </NavItem> */}
-              <UncontrolledDropdown nav inNavbar>
+              <NavItem>
+                <NavLink href="/profile">My Profile</NavLink>
+              </NavItem>
+              {/* <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
                   Options
                 </DropdownToggle>
                 <DropdownMenu right>
-                  <DropdownItem>
-                    Mission
+                  <DropdownItem href="/profile">
+                    My Profile
                   </DropdownItem>
                   <DropdownItem>
                     FAQs
@@ -56,7 +56,7 @@ export default class NavBar extends React.Component {
                     Careers
                   </DropdownItem>
                 </DropdownMenu>
-              </UncontrolledDropdown>
+              </UncontrolledDropdown> */}
             </Nav>
           </Collapse>
         </Navbar>
