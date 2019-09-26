@@ -3,14 +3,23 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { Form, Button, Field, Input, Select} from 'semantic-ui-react';
 import StrainCard from "./StrainCard";
-import strainData from "../dummydata/data"
+import strainData from "../dummydata/data";
 
 // component styling
+
+const SearchContainer = styled.div`
+width: 80%; 
+height:auto;
+border: 3px solid;
+border-radius: 12px;
+margin: 0 auto;
+`;
 
 const HeadingContainerDiv = styled.div`
     display: flex;
     justify-content: center;
     text-align: center;
+    /* background: red; */
 `;
 
 const SubHeadingContainerDiv = styled.div`
@@ -33,10 +42,12 @@ const SearchContainerDiv = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 1%;
 
 
     Button {
         width: 100%;
+        margin: 1%;
     }
 `;
 
@@ -78,7 +89,8 @@ export default function SearchForm({ favorites, setFavorites }) {
     }
 
     return (
-        <>
+        
+        <SearchContainer>
         <HeadingContainerDiv>
             <h1>Strain Search</h1>
             </HeadingContainerDiv>
@@ -113,6 +125,7 @@ export default function SearchForm({ favorites, setFavorites }) {
         <StrainCardContainer>
             {searchResults.map(item => <StrainCard data={item} favorites={favorites} setFavorites={setFavorites}></StrainCard>)}
         </StrainCardContainer>
-        </>
+        </SearchContainer>
+        
     )
 }

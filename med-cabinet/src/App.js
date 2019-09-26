@@ -23,7 +23,7 @@ function App() {
       {/* <Route exact path='/search' render={(props) => <SearchForm favorites={favorites} setFavorites={setFavorites}/>}/> */}
       {/* <ProtectedRoute exact path='/profile' render={(props) => <Profile favorites={favorites}/>}/> */}
       <ProtectedRoute exact path='/profile' component={ProfileCard}/>
-      <ProtectedRoute exact path='/search' component={SearchForm}/>
+      <Route exact path='/search' component={SearchForm}/>
 
       <Route path ="*" component={()=> "404 not found"}/>
       </Switch>
