@@ -109,7 +109,7 @@ const FormikSignIn = withFormik({
             .then(res=>{
                 console.log('login',res)
                 setStatus(res.data)
-                props.history.push('/profile')
+                props.history.push('/search')
             })
             .catch(err=>console.log("somethingswronglogin", err))
     }

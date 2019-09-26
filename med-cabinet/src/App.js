@@ -20,9 +20,11 @@ function App() {
     <div className="App">
       <Switch>
       <Route exact path='/' component={Entrance}/>
-      <Route exact path='/search' render={(props) => <SearchForm favorites={favorites} setFavorites={setFavorites}/>}/>
+      {/* <Route exact path='/search' render={(props) => <SearchForm favorites={favorites} setFavorites={setFavorites}/>}/> */}
       {/* <ProtectedRoute exact path='/profile' render={(props) => <Profile favorites={favorites}/>}/> */}
-      <ProtectedRoute exact path='/profile' component={Profile}/>
+      <ProtectedRoute exact path='/profile' component={ProfileCard}/>
+      <ProtectedRoute exact path='/search' component={SearchForm}/>
+
       <Route path ="*" component={()=> "404 not found"}/>
       </Switch>
 

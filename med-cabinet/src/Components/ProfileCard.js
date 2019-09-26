@@ -13,7 +13,7 @@ const ProfileCard = ({ favorites, setFavorites }) => {
     <Header />
     <Wrapped>
         <Test />
-        {favorites.map(favorite => <RecCards data={favorite} favorites={favorites} setFavorites={setFavorites}></RecCards>)}
+        {/* {favorites.map(favorite => <RecCards data={favorite} favorites={favorites} setFavorites={setFavorites}></RecCards>)} */}
     </Wrapped>
     </ProfilePage>
 
