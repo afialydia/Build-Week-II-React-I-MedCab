@@ -26,8 +26,7 @@ function App() {
       <Route path ="*" component={()=> "404 not found"}/>
       </Switch>
 
-      <Route exact path='/profile' render={(props) => <ProfileCard favorites={favorites} setFavorites={setFavorites}/>}/>
-      <Route exact path='/testprofile' render={(props) => <TestProfile favorites={favorites}/>}/>
+      <Route exact path='/testprofile' render={(props) => <TestProfile favorites={favorites} setFavorites={setFavorites}/>}/>
 
     </div>
     )
