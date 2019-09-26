@@ -79,14 +79,14 @@ export default function SearchForm({ favorites, setFavorites }) {
     
     const handleSubmit = () => {
          setResults(strainData.filter(strain => strain.Description.includes(strainQuery.search) && strain.Rating > 4.9));
-/*          axios.post('https://medcabinet-backend.herokuapp.com/api/search', strainQuery.search)
+         axios.get(`https://cors-anywhere.herokuapp.com/https://morning-badlands-32563.herokuapp.com/recommend/?sad`)
             .then(res => {
-                console.log(res);
+                console.log(res.data);
                 console.log(strainQuery.search)
             })
             .catch(err => {
                 console.log(err);
-            }) */
+            })
     }
 
     return (

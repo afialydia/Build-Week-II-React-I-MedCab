@@ -3,7 +3,7 @@ import {ProfileTitle} from "./Styles"
 
 function Test() {
   return (
-    <ProfileTitle>Welcome Username! <br></br>
+    <ProfileTitle>Welcome! <br></br>
     Here are your saved strains</ProfileTitle>
   );
 }
