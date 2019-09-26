@@ -1500,6 +1500,11 @@ adjust-sourcemap-loader@2.0.0:
     object-path "0.11.4"
     regex-parser "2.2.10"
 
+agegate@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/agegate/-/agegate-3.0.0.tgz#ae77fd681eea22671a2efdf2129f9ebb2d6fbcd4"
+  integrity sha1-rnf9aB7qImcaLv3yEp+euy1vvNQ=
+
 ajv-errors@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/ajv-errors/-/ajv-errors-1.0.1.tgz#f35986aceb91afadec4102fbd85014950cefa64d"
