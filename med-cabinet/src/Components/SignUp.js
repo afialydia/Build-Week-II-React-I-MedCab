@@ -48,7 +48,7 @@ const SignUp = ({
     touched,
     isSubmitting
     
-}) => (
+},props) => (
     <Wrap>
         <Form><LogIn> 
 
@@ -79,7 +79,9 @@ const SignUp = ({
         }}>
             Submit
         </button>
-       </LogIn> </Form></Wrap>
+           </LogIn>
+        </Form>
+    </Wrap>
     
 )
 
