@@ -9,6 +9,8 @@ import Entrance from "./Components/Entrance";
 import SearchForm from "./Components/SearchForm";
 import { Route, Switch } from 'react-router-dom';
 import {ProtectedRoute} from './Components/ProtectedRoute'
+import NavBar from './Components/NavBar.js';
+import EntranceHome from './Components/EntranceHome.js';
 
 
 function App() { 
@@ -18,8 +20,12 @@ function App() {
 
   return (
     <div className="App">
+      <NavBar />
       <Switch>
-      <Route exact path='/' component={Entrance}/>
+      <Route exact path='/' component={EntranceHome}/>
+
+      <Route exact path='/getmeds' component={Entrance}/>
+      
       {/* <Route exact path='/search' render={(props) => <SearchForm favorites={favorites} setFavorites={setFavorites}/>}/> */}
       {/* <ProtectedRoute exact path='/profile' render={(props) => <Profile favorites={favorites}/>}/> */}
       <ProtectedRoute exact path='/profile' component={ProfileCard}/>
