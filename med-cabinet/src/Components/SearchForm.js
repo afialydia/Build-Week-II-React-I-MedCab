@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { Form, Button, Field, Input, Select} from 'semantic-ui-react';
 import StrainCard from "./StrainCard";
-import strainData from "../dummydata/data";
+import strainData from "../dummydata/data"
+import Axios from 'axios';
 
 // component styling
 
@@ -66,6 +68,8 @@ const options = [
 
 export default function SearchForm({ favorites, setFavorites }) {
 
+    console.log(favorites)
+
     const [strainQuery, setQuery] = useState({
         search: "",
     });
@@ -86,6 +90,14 @@ export default function SearchForm({ favorites, setFavorites }) {
     
     const handleSubmit = () => {
          setResults(strainData.filter(strain => strain.Description.includes(strainQuery.search) && strain.Rating > 4.9));
+/*          axios.post('https://medcabinet-backend.herokuapp.com/api/search', strainQuery.search)
+            .then(res => {
+                console.log(res);
+                console.log(strainQuery.search)
+            })
+            .catch(err => {
+                console.log(err);
+            }) */
     }
 
     return (
@@ -94,7 +106,6 @@ export default function SearchForm({ favorites, setFavorites }) {
         <HeadingContainerDiv>
             <h1>Strain Search</h1>
             </HeadingContainerDiv>
-        <Link to='/testprofile'>Test Profile</Link><br></br>
         <Link to='/profile'>Profile</Link>
         <SubHeadingContainerDiv>
             <p>

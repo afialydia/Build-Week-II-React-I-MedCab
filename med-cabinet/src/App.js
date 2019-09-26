@@ -27,14 +27,14 @@ function App() {
       <Route exact path='/getmeds' component={Entrance}/>
       
       {/* <Route exact path='/search' render={(props) => <SearchForm favorites={favorites} setFavorites={setFavorites}/>}/> */}
-      {/* <ProtectedRoute exact path='/profile' render={(props) => <Profile favorites={favorites}/>}/> */}
+      {/*<ProtectedRoute exact path='/profile' render={(props) => <ProfileCard favorites={favorites} setFavorites={setFavorites}/>}/>*/}
       <ProtectedRoute exact path='/profile' component={ProfileCard}/>
       <Route exact path='/search' component={SearchForm}/>
 
       <Route path ="*" component={()=> "404 not found"}/>
       </Switch>
 
-      <Route exact path='/testprofile' render={(props) => <TestProfile favorites={favorites} setFavorites={setFavorites}/>}/>
+      <Route exact path='/testprofile' render={(props) => <ProfileCard favorites={favorites} setFavorites={setFavorites}/>}/>
 
     </div>
     )
