@@ -3,13 +3,12 @@ import { One, Button, Info } from "./Styles";
 
 function RecCards({ data, favorites, setFavorites }) {     
 
-    console.log(setFavorites)
-
-    for (let i = 0; i < favorites.length; i++) {
+/*     for (let i = 0; i < favorites.length; i++) {
         if (favorites[i] === data) {
-            console.log(`${i}: ${favorites[i].Effects}`)
+            console.log(`${i}: ${favorites[i].Effects}`);
+            setFavorites(...favorites, favorites[i].Strain = "Test");
         }
-    }
+    } */
 
     const [newEffect, setNewEffect] = useState("");
 
@@ -26,6 +25,15 @@ function RecCards({ data, favorites, setFavorites }) {
        console.log(newEffect)
     }
 
+    const handleClick = () => {
+        setFavorites(favorites.map(newFavorite => {
+            if (newFavorite.Strain === data.Strain) {
+                newFavorite.Effects += ", " + newEffect
+            }
+            return newFavorite
+        }))
+    }
+
     return (
         <div>
             <One className= "recommendation-one">
@@ -36,6 +44,7 @@ function RecCards({ data, favorites, setFavorites }) {
                 <form onSubmit={(event) => handleSubmit(event)}>
                 <Info>Add Effect: 
                     <input type="text" onChange={(event) => handleChange(event)}></input>
+                    <Button onClick={() => handleClick()}>Add</Button>
                 </Info>     
                 </form>
                 <Button onClick={()=> handleDelete()}>Delete Selection</Button>
