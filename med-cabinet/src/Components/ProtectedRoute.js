@@ -3,13 +3,13 @@ import {Route, Redirect} from 'react-router-dom';
 import Auth from "./auth";
 
 export const ProtectedRoute = ({component: Component, ...rest}) => {
-    const [favorites, setFavorites] = useState([])
-
+//     const [favorites, setFavorites] = useState([])
+// favorites={favorites} setFavorites={setFavorites}
     return(
         <Route {...rest} render={
             (props) => {
                 if(Auth.isAuthenticated()){
-                    return <Component {...props} favorites={favorites} setFavorites={setFavorites} />;
+                    return <Component {...props}  />;
                 }
                 else {
                 return <Redirect to={

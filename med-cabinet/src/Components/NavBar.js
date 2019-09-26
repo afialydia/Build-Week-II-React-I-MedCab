@@ -40,6 +40,9 @@ export default class NavBar extends React.Component {
               <NavItem>
                 <NavLink href="/profile">My Profile</NavLink>
               </NavItem>
+              <NavItem>
+              <NavLink href="/search">Search</NavLink>
+              </NavItem>
               {/* <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
                   Options

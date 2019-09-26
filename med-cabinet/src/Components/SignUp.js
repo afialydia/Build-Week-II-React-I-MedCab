@@ -64,7 +64,7 @@ const SignUp = ({
         {touched.confirmPassword && errors.confirmPassword && <p>{errors.confirmPassword}</p>}
         </div>
         
-        <label><h4>I am 21+ years old.</h4><Field type ="checkbox" name="over20" checked={values.over20}className="fields"/></label>
+        <label><h5>I am 21+ years old.</h5><Field type ="checkbox" name="over20" checked={values.over20}className="fields"/></label>
 
         <Field className="fields" component="select" name="use">
             <option value="Pick One"> Pick One</option>
