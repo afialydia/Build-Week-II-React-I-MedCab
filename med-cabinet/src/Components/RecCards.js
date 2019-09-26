@@ -21,3 +21,23 @@ function RecCards({ data, favorites, setFavorites }) {
 }    
 
 export default RecCards;
+
+
+/*
+    useEffect? inside of reccards function?
+    import axios
+
+    hand submit func. that runs the axios delete on submit
+    call it on click?
+    
+    *****waiting for the endpoint from backend***
+
+    const deleteColor = color => {
+     
+    // make a delete request to delete this color
+    axios.delete(`http://localhost:5000/api/colors/${color.id}`, colorToEdit )
+    .then(res => console.log(res))
+    .catch(err => console.log(err.response))
+    window.location.reload()
+  };
+*/
