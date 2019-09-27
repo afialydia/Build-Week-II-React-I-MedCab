@@ -20,7 +20,7 @@ display: flex;
 flex-direction: column;
 margin: auto;
 align-items:center;
-justify-content: space-around;
+justify-content: space-evenly;
 max-width: 1000px;
 height: 100vh;
 border-radius: 12px;

@@ -60,11 +60,11 @@ const SignUp = ({
         {touched.password && errors.password && <p>{errors.password}</p>}
         </div>
 
-        <div><Field type="password" name="confirmPassword" placeholder="confirm password" className="fields" />
+        <div><Field type="password" name="confirmPassword" placeholder="Confirm Password" className="fields" />
         {touched.confirmPassword && errors.confirmPassword && <p>{errors.confirmPassword}</p>}
         </div>
         
-        <label><h4>I am 21+ years old.</h4><Field type ="checkbox" name="over20" checked={values.over20}className="fields"/></label>
+        <label className="confirm-age">I am over 21<Field type ="checkbox" name="over20" checked={values.over20}className="fields"/></label>
 
         <Field className="fields" component="select" name="use">
             <option value="Pick One"> Pick One</option>
@@ -73,12 +73,12 @@ const SignUp = ({
             <option value="A Bit of Both">A Bit of Both</option>
         </Field>
 
-        <button disabled={isSubmitting} onClick={()=> {
+        <Button disabled={isSubmitting} onClick={()=> {
             auth.login(() => {
             });
         }}>
             Submit
-        </button>
+        </Button>
            </LogIn>
         </Form>
     </Wrap>
