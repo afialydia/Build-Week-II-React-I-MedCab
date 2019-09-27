@@ -122,7 +122,7 @@ const FormikSignUp = withFormik({
             .then(res =>{
                 console.log('axios',res)
                 setStatus(res.data)
-                props.history.push('/profile')
+                props.history.push('/search')
 
             })
         .catch(err =>console.log("somethingswrongsignup", err))

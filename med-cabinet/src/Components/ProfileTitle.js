@@ -1,9 +1,10 @@
 import React from "react";
+import {ProfileTitle} from "./Styles"
 
 function Test() {
   return (
-    <h1>Welcome Username! <br></br>
-    Here are your saved strains</h1>
+    <ProfileTitle>Welcome! <br></br>
+    Here are your saved strains</ProfileTitle>
   );
 }
 

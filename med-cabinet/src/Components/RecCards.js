@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { One, Button, Info } from "./Styles";   
 
-function RecCards({ data, favorites, setFavorites }) {     
+function RecCards({ data, favorites, setFavorites }) {    
+
 
 /*     for (let i = 0; i < favorites.length; i++) {
         if (favorites[i] === data) {
