@@ -5,19 +5,24 @@ import styled from "styled-components";
 import {withFormik, Form, Field} from "formik";
 import axios from "axios";
 import auth from "./auth";
+import { Button } from 'semantic-ui-react';
+import './fields-modifications.css';
 
 const Wrap = styled.div`
 max-width: 80%;
-margin: 0 auto;
 /* align-items:center; */
-/* border: 5px dashed; */
+/* border: 5px dashed;  */
 /* border-radius:12px; */
 display: flex;
 flex-direction: column;
-height: 30vh;
 width: 30vw;
 border-radius:12px;
-background: rgb(206,212,182,.6);`
+background: rgb(206,212,182,.6);
+
+    * {
+        margin-bottom: 0.5em;
+    }
+`
 
 const LogIn = styled.div`
 display: flex;
@@ -64,12 +69,12 @@ const SignIn = ({
         </div>
        
 
-        <button disabled={isSubmitting} onClick={()=> {
+        <Button disabled={isSubmitting} onClick={()=> {
             auth.login(() => {
             });
         }}>
             Submit
-        </button>
+        </Button>
             </LogIn> 
        </Form>
     </Wrap>

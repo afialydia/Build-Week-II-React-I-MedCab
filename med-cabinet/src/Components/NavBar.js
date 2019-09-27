@@ -11,6 +11,9 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem } from 'reactstrap';
+
+// css file to fix the navbar links to render properly despite being a mix of react-router-dom and reactstrap components
+import './navbar-reactstrap-modifications.css'
 import { Link } from 'react-router-dom';
 
 export default class NavBar extends React.Component {
@@ -30,19 +33,19 @@ export default class NavBar extends React.Component {
   render() {
     return (
       <div>
-        <Navbar color="light" light expand="md">
+        <Navbar className="navbar-sticky" color="light" light expand="md">
           <NavbarBrand href="/">The Med Cab</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <Link to="/getmeds">Get Meds </Link>
+                <NavLink><Link className="restyled-nav-link" to="/getmeds">Get Meds </Link></NavLink>
               </NavItem>
               <NavItem>
-                <Link to="/search">Search Strains</Link>
+                <NavLink><Link className="restyled-nav-link" to="/search">Search Strains</Link></NavLink>
               </NavItem>
               <NavItem>
-                <Link to="/profile">My Profile</Link>
+              <NavLink><Link className="restyled-nav-link" to="/profile">My Profile</Link></NavLink>
               </NavItem>
               {/* <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>

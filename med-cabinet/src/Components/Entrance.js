@@ -11,7 +11,7 @@ import { Route, BrowserRouter } from 'react-router-dom';
 
 const EntraDiv = styled.div`
 display: flex;
-/* border: 4px solid white; */
+height: 20em;
 width: 80%;
 `;
 
@@ -20,11 +20,10 @@ display: flex;
 flex-direction: column;
 margin: auto;
 align-items:center;
-justify-content: space-around;
+justify-content: space-evenly;
 max-width: 1000px;
-height: 96vh;
+height: 100vh;
 border-radius: 12px;
-/* border: 2px solid; */
 
 `;
 

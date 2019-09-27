@@ -10,6 +10,7 @@ import Axios from 'axios';
 // component styling
 
 const HeadingContainerDiv = styled.div`
+    margin-top: 5em;
     display: flex;
     justify-content: center;
     text-align: center;
@@ -17,6 +18,7 @@ const HeadingContainerDiv = styled.div`
 
 const SubHeadingContainerDiv = styled.div`
     display: flex;
+    padding: 1em;
     justify-content: center;
     text-align: center;
 
@@ -78,11 +80,13 @@ export default function SearchForm({ favorites, setFavorites }) {
     } */
     
     const handleSubmit = () => {
-         setResults(strainData.filter(strain => strain.Description.includes(strainQuery.search) && strain.Rating > 4.9));
-         axios.get(`https://cors-anywhere.herokuapp.com/https://morning-badlands-32563.herokuapp.com/recommend/?sad`)
+         //setResults(strainData.filter(strain => strain.Description.includes(strainQuery.search) && strain.Rating > 4.9));
+         axios.get(`https://cors-anywhere.herokuapp.com/https://morning-badlands-32563.herokuapp.com/recommend/?${strainQuery.search}`)
             .then(res => {
-                console.log(res.data);
+                const modelData = JSON.parse(res.data)
                 console.log(strainQuery.search)
+                console.log(modelData);
+                setResults(modelData)
             })
             .catch(err => {
                 console.log(err);
@@ -94,10 +98,9 @@ export default function SearchForm({ favorites, setFavorites }) {
         <HeadingContainerDiv>
             <h1>Strain Search</h1>
             </HeadingContainerDiv>
-        <Link to='/profile'>Profile</Link>
         <SubHeadingContainerDiv>
             <p>
-                Search below to receive personalized recommendations for strains of medicinal marijuana.
+                Search below to receive personalized strain recommendations using our data science model.
             </p>
         </SubHeadingContainerDiv>
         <SearchContainerDiv>
