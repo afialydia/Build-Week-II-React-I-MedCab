@@ -10,6 +10,7 @@ import Axios from 'axios';
 // component styling
 
 const HeadingContainerDiv = styled.div`
+    margin-top: 5em;
     display: flex;
     justify-content: center;
     text-align: center;
@@ -17,6 +18,7 @@ const HeadingContainerDiv = styled.div`
 
 const SubHeadingContainerDiv = styled.div`
     display: flex;
+    padding: 1em;
     justify-content: center;
     text-align: center;
 
