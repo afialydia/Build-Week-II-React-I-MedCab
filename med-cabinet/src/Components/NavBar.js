@@ -11,6 +11,8 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem } from 'reactstrap';
+
+// css file to fix the navbar links to render properly despite being a mix of react-router-dom and reactstrap components
 import './navbar-reactstrap-modifications.css'
 import { Link } from 'react-router-dom';
 

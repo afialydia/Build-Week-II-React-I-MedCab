@@ -5,16 +5,17 @@ import styled from "styled-components";
 import {withFormik, Form, Field} from "formik";
 import axios from "axios";
 import auth from "./auth";
+// css file to style form inputs
+import './fields-modifications.css';
+import { Button } from 'semantic-ui-react'
 
 const Wrap = styled.div`
 max-width: 80%;
 margin: 0 auto;
 /* align-items:center; */
-/* border: 5px dashed; */
 /* border-radius:12px; */
 display: flex;
 flex-direction: column;
-height: 30vh;
 width: 30vw;
 border-radius:12px;
 background: rgb(206,212,182,.6);`
@@ -27,7 +28,6 @@ padding: 10%;
 align-items: center;
 margin: auto;
 color: rgb(64,64,64);`
-
 
 /* 
 const Thing = styled.button`
