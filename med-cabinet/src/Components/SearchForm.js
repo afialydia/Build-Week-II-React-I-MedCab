@@ -94,10 +94,9 @@ export default function SearchForm({ favorites, setFavorites }) {
         <HeadingContainerDiv>
             <h1>Strain Search</h1>
             </HeadingContainerDiv>
-        <Link to='/profile'>Profile</Link>
         <SubHeadingContainerDiv>
             <p>
-                Search below to receive personalized recommendations for strains of medicinal marijuana.
+                Search below to receive personalized strain recommendations using our data science model.
             </p>
         </SubHeadingContainerDiv>
         <SearchContainerDiv>
