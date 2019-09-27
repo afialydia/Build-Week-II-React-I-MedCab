@@ -81,9 +81,11 @@ export default function SearchForm({ favorites, setFavorites }) {
     
     const handleSubmit = () => {
          //setResults(strainData.filter(strain => strain.Description.includes(strainQuery.search) && strain.Rating > 4.9));
-         axios.get(`https://cors-anywhere.herokuapp.com/https://morning-badlands-32563.herokuapp.com/recommend/?sad`)
+         axios.get(`https://cors-anywhere.herokuapp.com/https://morning-badlands-32563.herokuapp.com/recommend/?${strainQuery.search}`)
             .then(res => {
                 const modelData = JSON.parse(res.data)
+                console.log(strainQuery.search)
+                console.log(modelData);
                 setResults(modelData)
             })
             .catch(err => {
