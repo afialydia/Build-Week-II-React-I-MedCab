@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { Form, Button, Field, Input, Select} from 'semantic-ui-react';
 import StrainCard from "./StrainCard";
+import "../SearchStyles.css"
 import strainData from "../dummydata/data"
 import Axios from 'axios';
 
@@ -47,6 +48,8 @@ const SearchContainerDiv = styled.div`
 const StrainCardContainer = styled.div`
     display: flex;
     justify-content: center;
+    align-items: stretch;
+    border: 2px solid;
     flex-wrap: wrap;
     width: 100%;
 `
@@ -125,7 +128,7 @@ export default function SearchForm({ favorites, setFavorites }) {
         </Form>
         </SearchContainerDiv>
         <StrainCardContainer>
-            {searchResults.map(item => <StrainCard data={item} favorites={favorites} setFavorites={setFavorites}></StrainCard>)}
+            {searchResults.map(item => <StrainCard className="strains" data={item} favorites={favorites} setFavorites={setFavorites}></StrainCard>)}
         </StrainCardContainer>
         </>
     )

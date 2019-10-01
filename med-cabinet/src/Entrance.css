@@ -1,7 +1,7 @@
 *{
     box-sizing: border-box;
-    font-family: Open Sans;
-    color:rgb(13,112,121);
+    font-family: Bree Serif;
+    
 }
 
 .trial{
@@ -9,7 +9,8 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    
+    margin-top: 3vh;
+    color:rgb(206,212,182);
 }
 
 .fields{
@@ -17,6 +18,12 @@
     color:rgb(206,212,182);
     border-radius: 6px;
     
+}
+
+p{
+    color: rgb(72, 98, 19);
+    margin: auto 0;
+    text-align: center;
 }
 
 label{

@@ -2,13 +2,16 @@
     border: none;
     padding: 0.5em;
     margin: 0.2em;
+    
 }
+
 
 .fields:focus {
     outline: none;
   }
 
 .confirm-age {
-    color: black;
+    color:rgb(206,212,182);
     font-size: 16px;
+    
 }

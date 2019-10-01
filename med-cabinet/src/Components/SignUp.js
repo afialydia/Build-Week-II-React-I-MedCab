@@ -99,8 +99,8 @@ const FormikSignUp = withFormik({
     validationSchema: Yup.object().shape({
         username: Yup.string().min(4).required('Username is required'),
         password: Yup.string().min(8).required('Password is required'),
-        confirmPassword: Yup.string().required().label("Confirm Password").test("passwords-match", "passwords must match", function(value){return this.parent.password === value;})
-        // over20: Yup.checked().required()
+        confirmPassword: Yup.string().required('Password is required').label("Confirm Password").test("passwords-match", "passwords must match", function(value){return this.parent.password === value;}),
+        over20: Yup.boolean().oneOf([true], 'Must be at leadt 21 years old to enter')
     }),
     handleSubmit(values, {
         resetForm, 
